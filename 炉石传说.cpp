@@ -5,7 +5,7 @@ using namespace std;
 typedef struct obd{
 //    int pos;
     int atk;
-	int health;
+    int health;
 }ODB;           //随从的位置，攻击力，生命值
 
 class player
@@ -19,11 +19,11 @@ public:
 
 	player():atk(0),health(30),win(1)
 	{
-        for(int i = 0; i < 7; i++)
-        {
-            obd[i].atk = 0;
-            obd[i].health = 0;
-        }
+		for(int i = 0; i < 7; i++)
+		{
+		    obd[i].atk = 0;
+		    obd[i].health = 0;
+		}
 	}
 	~player(){}
 	void addObd(int pos, int atk, int health);
@@ -35,11 +35,11 @@ public:
 	{
 	    n--;
 	    cout << "obd:" << n+1 << " atk:" << obd[n].atk << " health:" << obd[n].health << endl;
-    }
-
-    int getAtk(int pos){return obd[--pos].atk;}
-    int getHealth(){return health;}
-    int liveOdbNum();
+        }
+    
+        int getAtk(int pos){return obd[--pos].atk;}
+        int getHealth(){return health;}
+        int liveOdbNum();
 };
 
 int main()
@@ -51,9 +51,9 @@ int main()
     int atk1, atk2;
     int attacker, defender;
     bool state = 1;
-	cin >> n;
+    cin >> n;
 
-	for(int i = 0; i < n; i++)
+    for(int i = 0; i < n; i++)
     {
 //        cout << p1.getHealth()  << endl;
 //        cout << p1.liveOdbNum() << endl;
