@@ -1,0 +1,42 @@
+#include <iostream>
+#include <list>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<int> myList;
+    vector<vector<int>> vc;
+
+    list<vector<int>> xx;
+    list<vector<int>>::iterator  pos;  //定义指针，用于读取链表中的数据
+
+
+    int num;
+    cin >> num;
+    for (int i = 0; i < num; i++)
+    {
+        int j = 0;
+        do {
+            cin >> j;
+            myList.push_back(j);
+        } while (cin.get() != '\n');
+
+        xx.push_back(myList);
+        vc.push_back(myList);
+        myList.clear();
+    }
+
+    int i = 0;
+    for (pos = xx.begin(); pos != xx.end(); pos++) {
+        myList = vc[i]; i++;
+        int j = 0;
+        for (int i = 0; i < myList.size(); i++) {
+            j += myList[i];
+        }
+
+        cout << j << endl;
+    }   
+
+    return 0;
+}
