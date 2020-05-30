@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    string str;
+    string outStr;
+    cin >> str;
+
+    for (int i = str.length() - 1; i >= 0; i--) {
+        if (outStr.length() == 0)                           // 读取字符串长度
+            outStr.append(1, str[i]);                       // 添加字符串长度，字符串内容
+        else if (outStr.find(str[i]) == string::npos) {     // 判断字符串中没有重复的
+            outStr.append(1, str[i]);                       
+        }
+    }
+
+    cout << outStr;
+
+    return 0;
+}
