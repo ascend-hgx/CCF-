@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    string str;
+    cin >> str;
+
+    char state = 0;
+    int value = 0;
+    int x = 0, y = 0;
+    int offset = '1' - 1;
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] == 'A')// || str[i] == 'D' || str[i] == 'W' || str[i] == 'S')
+        {
+            state = 'A';
+            continue;
+        }
+        else if(str[i] == 'D')
+        {
+            state = 'D';
+            continue;
+        }
+        else if (str[i] == 'W')
+        {
+            state = 'W';
+            continue;
+        }
+        else if (str[i] == 'S')
+        {
+            state = 'S';
+            continue;
+        }
+        else if (str[i] == ';') {
+            if (state == 'A')
+                x -= value;
+            else if (state == 'D')
+                x += value;
+            else if (state == 'W')
+                y += value;
+            else if (state == 'S')
+                y -= value;
+
+            value = 0;
+            continue;
+        }
+
+        if (state != 0)
+        {
+            value = value * 10 + str[i] - offset;
+        }
+    }
+
+    cout << x << "," << y;
+
+    return 0;
+}
